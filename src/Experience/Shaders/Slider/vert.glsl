@@ -1,5 +1,4 @@
 #include "/node_modules/lygia/math/const.glsl"
-#include "/node_modules/lygia/sdf/opUnion.glsl"
 
 uniform float iTime;
 uniform vec3 iResolution;
@@ -19,7 +18,7 @@ float getStagger(vec2 uv){
     float bottom=uv.y;
     float right=1.-uv.x;
     float top=1.-uv.y;
-    return opUnion(top,right);
+    return top*right;
 }
 
 vec3 transition(vec3 p){
